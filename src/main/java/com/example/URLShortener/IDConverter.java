@@ -9,14 +9,17 @@ public class IDConverter {
     public static final IDConverter INSTANCE = new IDConverter();
 
     private IDConverter() {
-        initializeCharToIndexTable();
         initializeIndexToCharTable();
     }
 
     private static HashMap<Character, Integer> charToIndexTable;
     private static List<Character> indexToCharTable;
 
-    private void initializeCharToIndexTable() {
+    static {
+        initializeCharToIndexTable();
+    }
+
+    private static void initializeCharToIndexTable() {
         charToIndexTable = new HashMap<>();
         // 0->a, 1->b, ..., 25->z, ..., 52->0, 61->9
         for (int i = 0; i < 26; ++i) {
@@ -93,4 +96,3 @@ public class IDConverter {
     }
 
 }
-
