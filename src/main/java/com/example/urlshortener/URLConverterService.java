@@ -20,8 +20,8 @@ public class URLConverterService {
         String uniqueID = IDConverter.INSTANCE.createUniqueID(id);
         urlRepository.saveUrl("url:"+id, longUrl);
         String baseString = formatLocalURLFromShortener(localURL);
-        String shortenedURL = baseString + uniqueID;
-        return shortenedURL;
+//        String shortenedURL = baseString + uniqueID;
+        return (baseString + uniqueID);
     }
 
     public String getLongURLFromID(String uniqueID) throws Exception {
