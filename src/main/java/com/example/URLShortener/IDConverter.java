@@ -82,8 +82,8 @@ public class IDConverter {
         for (int i = 0; i < uniqueID.length(); ++i) {
             base62IDs.add(uniqueID.charAt(i));
         }
-        Long dictionaryKey = convertBase62ToBase10ID(base62IDs);
-        return dictionaryKey;
+//        Long dictionaryKey = convertBase62ToBase10ID(base62IDs);
+        return convertBase62ToBase10ID(base62IDs);
     }
 
     private static Long convertBase62ToBase10ID(List<Character> ids) {
