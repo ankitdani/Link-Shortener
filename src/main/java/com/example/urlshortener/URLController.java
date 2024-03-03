@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 import javax.validation.Valid;
-import java.net.URISyntaxException;
 
 @RestController
 public class URLController {
@@ -36,7 +35,7 @@ public class URLController {
     }
 
     @GetMapping(value = "/{id}")
-    public RedirectView redirectUrl(@PathVariable String id, HttpServletRequest request, HttpServletResponse response) throws URISyntaxException, Exception {
+    public RedirectView redirectUrl(@PathVariable String id, HttpServletRequest request, HttpServletResponse response) throws Exception {
         LOGGER.debug("Received shortened url to redirect: {}", id);
         String redirectUrlString = urlConverterService.getLongURLFromID(id);
         RedirectView redirectView = new RedirectView();
