@@ -1,6 +1,5 @@
 package com.example.urlshortener;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
@@ -26,25 +25,30 @@ public class URLRepository {
         this.urlKey = urlKey;
     }
 
-    public Long incrementID(){
+    public Long incrementID() {
         Long id = jedis.incr(idKey);
-        LOGGER.info("Incrementing ID: {}", id-1);
+        LOGGER.info("Incrementing ID: {}", id - 1);
         return id - 1;
     }
 
-    public void saveUrl(String key, String longUrl){
+    public void saveUrl(String key, String longUrl) {
         LOGGER.info("Saving: {} at {}", longUrl, key);
         jedis.hset(urlKey, key, longUrl);
     }
 
-    public String getUrl(Long id) throws Exception{
+    public String getUrl(Long id) throws URLNotFoundException {
         LOGGER.info("Retrieving at {}", id);
-        String url = jedis.hget(urlKey, "url:"+id);
-        LOGGER.info("Retrieved {} at {}", url ,id);
-        if (url == null){
-            throw new Exception("URL at key"+id+" does not exist");
+        String url = jedis.hget(urlKey, "url:" + id);
+        LOGGER.info("Retrieved {} at {}", url, id);
+        if (url == null) {
+            throw new URLNotFoundException("URL at key" + id + " does not exist");
         }
         return url;
     }
 }
 
+class URLNotFoundException extends Exception {
+    public URLNotFoundException(String message) {
+        super(message);
+    }
+}
