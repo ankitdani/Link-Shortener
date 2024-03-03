@@ -37,7 +37,7 @@ public class URLController {
     }
 
     @GetMapping(value = "/{id}")
-    public RedirectView redirectUrl(@PathVariable String id, HttpServletRequest request, HttpServletResponse response) throws IOException, URISyntaxException, Exception {
+    public RedirectView redirectUrl(@PathVariable String id, HttpServletRequest request, HttpServletResponse response) throws URISyntaxException, Exception {
         LOGGER.debug("Received shortened url to redirect: {}", id);
         String redirectUrlString = urlConverterService.getLongURLFromID(id);
         RedirectView redirectView = new RedirectView();
