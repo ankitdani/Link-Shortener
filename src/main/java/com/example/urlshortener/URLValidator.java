@@ -1,4 +1,4 @@
-package com.example.URLShortener;
+package com.example.urlshortener;
 
 
 import java.util.regex.Matcher;
