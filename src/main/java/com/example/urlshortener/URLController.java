@@ -25,12 +25,12 @@ public class URLController {
 
     @RequestMapping(value = "/shortener", method= RequestMethod.POST, consumes = {"application/json"})
     public String shortenUrl(@RequestBody @Valid final ShortenRequest shortenRequest, HttpServletRequest request) throws Exception {
-        LOGGER.info("Received url to shorten: " + shortenRequest.getUrl());
+        LOGGER.info("Received url to shorten: {}", shortenRequest.getUrl());
         String longUrl = shortenRequest.getUrl();
         if (URLValidator.INSTANCE.validateURL(longUrl)) {
             String localURL = request.getRequestURL().toString();
             String shortenedUrl = urlConverterService.shortenURL(localURL, shortenRequest.getUrl());
-            LOGGER.info("Shortened url to: " + shortenedUrl);
+            LOGGER.info("Shortened url to: {}", shortenedUrl);
             return shortenedUrl;
         }
         throw new Exception("Please enter a valid URL");
@@ -38,7 +38,7 @@ public class URLController {
 
     @RequestMapping(value = "/{id}", method=RequestMethod.GET)
     public RedirectView redirectUrl(@PathVariable String id, HttpServletRequest request, HttpServletResponse response) throws IOException, URISyntaxException, Exception {
-        LOGGER.debug("Received shortened url to redirect: " + id);
+        LOGGER.debug("Received shortened url to redirect: {}", id);
         String redirectUrlString = urlConverterService.getLongURLFromID(id);
         RedirectView redirectView = new RedirectView();
         redirectView.setUrl("http://" + redirectUrlString);
