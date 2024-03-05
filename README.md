@@ -15,7 +15,7 @@ Base 62 is a way of using 62 (0-9a-zA-Z) characters for encoding.
 - ![Java](https://img.shields.io/badge/Java-Latest-orange)
 - ![Vaadin](https://img.shields.io/badge/Vaadin-Latest-blue)
 - ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-Latest-brightgreen)
-- ![Redis](https://img.shields.io/badge/Redis-Latest-red)(for storing shortened URLs)
+- ![Redis](https://img.shields.io/badge/Redis-Latest-red)
 - ![SonarLint](https://img.shields.io/badge/SonarLint-Latest-yellow)
 
 ## Features
