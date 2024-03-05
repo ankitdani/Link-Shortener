@@ -40,7 +40,7 @@ git clone https://github.com/your-username/url-shortener.git
 
 ### To run
 
-Start up Redis' Server
+Start Redis Server
 ```
 redis-server
 ```
