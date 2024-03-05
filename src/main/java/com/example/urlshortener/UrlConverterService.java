@@ -6,11 +6,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 @Service
-public class URLConverterService {
-    private static final Logger LOGGER = LoggerFactory.getLogger(URLConverterService.class);
+public class UrlConverterService {
+    private static final Logger LOGGER = LoggerFactory.getLogger(UrlConverterService.class);
     private final UrlRepository urlRepository;
 
-    public URLConverterService(UrlRepository urlRepository) {
+    public UrlConverterService(UrlRepository urlRepository) {
         this.urlRepository = urlRepository;
     }
 

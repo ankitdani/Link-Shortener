@@ -15,9 +15,9 @@ import javax.validation.Valid;
 @RestController
 public class UrlController {
     private static final Logger LOGGER = LoggerFactory.getLogger(UrlController.class);
-    private final URLConverterService urlConverterService;
+    private final UrlConverterService urlConverterService;
 
-    public UrlController(URLConverterService urlConverterService) {
+    public UrlController(UrlConverterService urlConverterService) {
         this.urlConverterService = urlConverterService;
     }
 
