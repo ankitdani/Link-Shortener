@@ -12,10 +12,11 @@ Base 62 is a way of using 62 (0-9a-zA-Z) characters for encoding.
 
 ## Technologies Used
 
-- Java: ![Java Logo](https://upload.wikimedia.org/wikipedia/de/e/e1/Java-Logo.svg)
-- Vaadin: ![Vaadin Logo](https://vaadin.com/images/trademark/Vaadin-logo.svg)
-- Spring Boot: ![Spring Boot Logo](https://spring.io/images/spring-logo.svg)
-- Redis(for storing shortened URLs): ![Redis Logo](https://redis.io/images/redis-white.png)
+- ![Java](https://img.shields.io/badge/Java-Latest-orange)
+- ![Vaadin](https://img.shields.io/badge/Vaadin-Latest-blue)
+- ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-Latest-brightgreen)
+- ![Redis](for storing shortened URLs)(https://img.shields.io/badge/Redis-Latest-red)
+- ![SonarLint](https://img.shields.io/badge/SonarLint-Latest-yellow)
 
 ## Features
 
@@ -33,10 +34,11 @@ To start the URL shortener locally, follow these steps:
 
 1. Clone this repository:
 
-   ```bash
-   git clone https://github.com/your-username/url-shortener.git
+```
+git clone https://github.com/your-username/url-shortener.git
+```
 
-## Getting Started
+### To run
 
 Start up Redis' Server
 ```
@@ -53,4 +55,7 @@ Run the project
 mvn spring-boot:run
 ```
 
-By default, the server will run on ```localhost:8080/shortener/v1```
+By default, the server will run on 
+```
+localhost:8080/shortener/v1
+```
