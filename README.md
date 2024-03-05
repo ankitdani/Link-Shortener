@@ -1,6 +1,6 @@
 # URL Shortener
 
-This is a URL shortener application built with Java and Vaadin.
+This is a URL shortener application built with Java, Spring, Redis and Vaadin.
 
 ## Overview
 
@@ -15,7 +15,7 @@ Base 62 is a way of using 62 (0-9a-zA-Z) characters for encoding.
 - ![Java](https://img.shields.io/badge/Java-Latest-orange)
 - ![Vaadin](https://img.shields.io/badge/Vaadin-Latest-blue)
 - ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-Latest-brightgreen)
-- ![Redis](for storing shortened URLs)(https://img.shields.io/badge/Redis-Latest-red)
+- ![Redis](https://img.shields.io/badge/Redis-Latest-red)(for storing shortened URLs)
 - ![SonarLint](https://img.shields.io/badge/SonarLint-Latest-yellow)
 
 ## Features
