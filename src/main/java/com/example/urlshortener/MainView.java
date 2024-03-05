@@ -9,7 +9,7 @@ import com.vaadin.flow.router.Route;
 
 import java.io.Serializable;
 
-@Route("")
+@Route("shortener/v1")
 public class MainView extends VerticalLayout implements Serializable {
 
     private transient UrlRepository urlRepository = new UrlRepository();
