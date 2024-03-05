@@ -1,14 +1,15 @@
-package com.example.urlshortener;
+package com.example.urlshortener.Service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
-public class IdConverter {
-    public static final IdConverter INSTANCE = new IdConverter();
+public class IdConverterService {
+    //singleton class instance
+    public static final IdConverterService INSTANCE = new IdConverterService();
 
-    private IdConverter() {
+    private IdConverterService() {
         initializeIndexToCharTable();
     }
 
@@ -19,9 +20,10 @@ public class IdConverter {
         initializeCharToIndexTable();
     }
 
+    //maps base 10 to base 62 format
     private static void initializeCharToIndexTable() {
         charToIndexTable = new HashMap<>();
-        // 0->a, 1->b, ..., 25->z, ..., 52->0, 61->9
+
         for (int i = 0; i < 26; ++i) {
             char c = 'a';
             c += i;
@@ -39,8 +41,9 @@ public class IdConverter {
         }
     }
 
+    //maps base 62 to base 10 format
     private static void initializeIndexToCharTable() {
-        // 0->a, 1->b, ..., 25->z, ..., 52->0, 61->9
+
         indexToCharTable = new ArrayList<>();
         for (int i = 0; i < 26; ++i) {
             char c = 'a';

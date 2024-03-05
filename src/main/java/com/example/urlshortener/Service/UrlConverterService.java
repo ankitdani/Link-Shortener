@@ -1,6 +1,7 @@
-package com.example.urlshortener;
+package com.example.urlshortener.Service;
 
 
+import com.example.urlshortener.Repository.UrlRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -17,7 +18,7 @@ public class UrlConverterService {
     public String shortenURL(String localURL, String longUrl) {
         LOGGER.info("Shortening {}", longUrl);
         Long id = urlRepository.incrementID();
-        String uniqueID = IdConverter.INSTANCE.createUniqueID(id);
+        String uniqueID = IdConverterService.INSTANCE.createUniqueID(id);
         urlRepository.saveUrl("url:"+id, longUrl);
         String baseString = formatLocalURLFromShortener(localURL);
 //        String shortenedURL = baseString + uniqueID;
@@ -25,7 +26,7 @@ public class UrlConverterService {
     }
 
     public String getLongURLFromID(String uniqueID) throws Exception {
-        Long dictionaryKey = IdConverter.INSTANCE.getDictionaryKeyFromUniqueID(uniqueID);
+        Long dictionaryKey = IdConverterService.INSTANCE.getDictionaryKeyFromUniqueID(uniqueID);
         String longUrl = urlRepository.getUrl(dictionaryKey);
         LOGGER.info("Converting shortened URL back to {}", longUrl);
         return longUrl;

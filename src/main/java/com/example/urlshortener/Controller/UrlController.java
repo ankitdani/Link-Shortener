@@ -1,6 +1,8 @@
-package com.example.urlshortener;
+package com.example.urlshortener.Controller;
 
 
+import com.example.urlshortener.Service.UrlConverterService;
+import com.example.urlshortener.Service.UrlValidatorService;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.servlet.http.HttpServletRequest;
@@ -25,7 +27,7 @@ public class UrlController {
     public String shortenUrl(@RequestBody @Valid final ShortenRequest shortenRequest, HttpServletRequest request) throws Exception {
         LOGGER.info("Received url to shorten: {}", shortenRequest.getUrl());
         String longUrl = shortenRequest.getUrl();
-        if (UrlValidator.INSTANCE.validateURL(longUrl)) {
+        if (UrlValidatorService.INSTANCE.validateURL(longUrl)) {
             String localURL = request.getRequestURL().toString();
             String shortenedUrl = urlConverterService.shortenURL(localURL, shortenRequest.getUrl());
             LOGGER.info("Shortened url to: {}", shortenedUrl);

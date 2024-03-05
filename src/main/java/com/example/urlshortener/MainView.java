@@ -1,5 +1,8 @@
 package com.example.urlshortener;
 
+import com.example.urlshortener.Repository.UrlRepository;
+import com.example.urlshortener.Service.UrlConverterService;
+import com.example.urlshortener.Service.UrlValidatorService;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.notification.Notification;
@@ -22,7 +25,7 @@ public class MainView extends VerticalLayout implements Serializable {
 
         shortenButton.addClickListener(event -> {
             String longUrl = longUrlField.getValue();
-            if (UrlValidator.INSTANCE.validateURL(longUrl)) {
+            if (UrlValidatorService.INSTANCE.validateURL(longUrl)) {
                 UrlConverterService urlConverterService = new UrlConverterService(urlRepository);
                 String shortUrl = urlConverterService.shortenURL(localURL, longUrl);
                 shortUrlSpan.setText(shortUrl);
