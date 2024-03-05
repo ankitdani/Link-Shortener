@@ -5,10 +5,10 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
-public class IDConverter {
-    public static final IDConverter INSTANCE = new IDConverter();
+public class IdConverter {
+    public static final IdConverter INSTANCE = new IdConverter();
 
-    private IDConverter() {
+    private IdConverter() {
         initializeIndexToCharTable();
     }
 

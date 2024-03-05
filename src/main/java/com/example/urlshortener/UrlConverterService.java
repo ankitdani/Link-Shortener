@@ -17,7 +17,7 @@ public class UrlConverterService {
     public String shortenURL(String localURL, String longUrl) {
         LOGGER.info("Shortening {}", longUrl);
         Long id = urlRepository.incrementID();
-        String uniqueID = IDConverter.INSTANCE.createUniqueID(id);
+        String uniqueID = IdConverter.INSTANCE.createUniqueID(id);
         urlRepository.saveUrl("url:"+id, longUrl);
         String baseString = formatLocalURLFromShortener(localURL);
 //        String shortenedURL = baseString + uniqueID;
@@ -25,7 +25,7 @@ public class UrlConverterService {
     }
 
     public String getLongURLFromID(String uniqueID) throws Exception {
-        Long dictionaryKey = IDConverter.INSTANCE.getDictionaryKeyFromUniqueID(uniqueID);
+        Long dictionaryKey = IdConverter.INSTANCE.getDictionaryKeyFromUniqueID(uniqueID);
         String longUrl = urlRepository.getUrl(dictionaryKey);
         LOGGER.info("Converting shortened URL back to {}", longUrl);
         return longUrl;
