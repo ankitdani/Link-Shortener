@@ -13,11 +13,11 @@ import org.springframework.web.servlet.view.RedirectView;
 import javax.validation.Valid;
 
 @RestController
-public class URLController {
-    private static final Logger LOGGER = LoggerFactory.getLogger(URLController.class);
+public class UrlController {
+    private static final Logger LOGGER = LoggerFactory.getLogger(UrlController.class);
     private final URLConverterService urlConverterService;
 
-    public URLController(URLConverterService urlConverterService) {
+    public UrlController(URLConverterService urlConverterService) {
         this.urlConverterService = urlConverterService;
     }
 
