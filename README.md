@@ -35,7 +35,7 @@ To start the URL shortener locally, follow these steps:
 Clone this repository:
 
 ```
-git clone https://github.com/your-username/url-shortener.git
+git clone https://github.com/ankitdani/Link-Shortener.git
 ```
 
 ### To run
