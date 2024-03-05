@@ -22,7 +22,7 @@ public class MainView extends VerticalLayout implements Serializable {
 
         shortenButton.addClickListener(event -> {
             String longUrl = longUrlField.getValue();
-            if (URLValidator.INSTANCE.validateURL(longUrl)) {
+            if (UrlValidator.INSTANCE.validateURL(longUrl)) {
                 UrlConverterService urlConverterService = new UrlConverterService(urlRepository);
                 String shortUrl = urlConverterService.shortenURL(localURL, longUrl);
                 shortUrlSpan.setText(shortUrl);

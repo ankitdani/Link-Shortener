@@ -25,7 +25,7 @@ public class UrlController {
     public String shortenUrl(@RequestBody @Valid final ShortenRequest shortenRequest, HttpServletRequest request) throws Exception {
         LOGGER.info("Received url to shorten: {}", shortenRequest.getUrl());
         String longUrl = shortenRequest.getUrl();
-        if (URLValidator.INSTANCE.validateURL(longUrl)) {
+        if (UrlValidator.INSTANCE.validateURL(longUrl)) {
             String localURL = request.getRequestURL().toString();
             String shortenedUrl = urlConverterService.shortenURL(localURL, shortenRequest.getUrl());
             LOGGER.info("Shortened url to: {}", shortenedUrl);
