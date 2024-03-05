@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Route("")
 public class MainView extends VerticalLayout implements Serializable {
 
-    private transient URLRepository urlRepository = new URLRepository();
+    private transient UrlRepository urlRepository = new UrlRepository();
     private String localURL = "http://localhost:8080/";
 
     public MainView() {

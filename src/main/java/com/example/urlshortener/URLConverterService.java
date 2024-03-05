@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class URLConverterService {
     private static final Logger LOGGER = LoggerFactory.getLogger(URLConverterService.class);
-    private final URLRepository urlRepository;
+    private final UrlRepository urlRepository;
 
-    public URLConverterService(URLRepository urlRepository) {
+    public URLConverterService(UrlRepository urlRepository) {
         this.urlRepository = urlRepository;
     }
 
