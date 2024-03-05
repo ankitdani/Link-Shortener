@@ -32,7 +32,7 @@ It is easy to figure out the next available short URL if the ID increments by 1 
 
 To start the URL shortener locally, follow these steps:
 
-1. Clone this repository:
+Clone this repository:
 
 ```
 git clone https://github.com/your-username/url-shortener.git
