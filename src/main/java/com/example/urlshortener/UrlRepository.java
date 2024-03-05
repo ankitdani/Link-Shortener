@@ -36,19 +36,19 @@ public class UrlRepository {
         jedis.hset(urlKey, key, longUrl);
     }
 
-    public String getUrl(Long id) throws URLNotFoundException {
+    public String getUrl(Long id) throws UrlNotFoundException {
         LOGGER.info("Retrieving at {}", id);
         String url = jedis.hget(urlKey, "url:" + id);
         LOGGER.info("Retrieved {} at {}", url, id);
         if (url == null) {
-            throw new URLNotFoundException("URL at key" + id + " does not exist");
+            throw new UrlNotFoundException("URL at key" + id + " does not exist");
         }
         return url;
     }
 }
 
-class URLNotFoundException extends Exception {
-    public URLNotFoundException(String message) {
+class UrlNotFoundException extends Exception {
+    public UrlNotFoundException(String message) {
         super(message);
     }
 }
