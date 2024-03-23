@@ -45,11 +45,6 @@ Start Redis Server
 redis-server
 ```
 
-Build the project
-```
-mvn build
-```
-
 Run the project
 ```
 mvn spring-boot:run
