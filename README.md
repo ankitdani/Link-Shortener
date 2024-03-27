@@ -1,6 +1,6 @@
 # URL Shortener
 
-This is a URL shortener application built with Java, Spring, Redis and Vaadin. [Demo](https://github.com/ankitdani/Link-Shortener/tree/main/Demo)
+This is a URL shortener application built with Java, Spring, Redis and Vaadin. [Demo]([https://github.com/ankitdani/Link-Shortener/tree/main/Demo](https://drive.google.com/file/d/1Ii87CGFYVRUgH3e-GTmmqG-ULCD7C7ay/view?usp=sharing))
 
 ## Overview
 
